@@ -8,9 +8,6 @@ Daniele Margutti, <http://www.danielem.org>
 
 ## How to get started
 
-You can pick between two modes:
-* standard mode: you will pass your list of UIViews and begin animation (all views will be adjusted and loaded at startup time)
-* lazy mode: you will pass only UIView's CGSizes array and a datasource blocks handler and DMScrollingView will load each view only when needed (and remove them when not used). It may be useful when you have lots of ticker elements (here called subviews) and you pay attention to the memory usage
 * Create NSView subclass inside your nib file
 * Connect each NSView via outlets to your view controller class 
 * For each NSView (/section) create a DMPaletteSectionView object and assign it to the view with a title
