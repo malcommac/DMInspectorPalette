@@ -1,0 +1,325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2116AA38159921C00057C24B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2116AA37159921C00057C24B /* Cocoa.framework */; };
+		2116AA42159921C00057C24B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2116AA40159921C00057C24B /* InfoPlist.strings */; };
+		2116AA44159921C00057C24B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2116AA43159921C00057C24B /* main.m */; };
+		2116AA48159921C00057C24B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2116AA46159921C00057C24B /* Credits.rtf */; };
+		2116AA4B159921C00057C24B /* DMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2116AA4A159921C00057C24B /* DMAppDelegate.m */; };
+		2116AA4E159921C00057C24B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2116AA4C159921C00057C24B /* MainMenu.xib */; };
+		2116AA56159921F40057C24B /* DMPaletteContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2116AA55159921F40057C24B /* DMPaletteContainer.m */; };
+		2116AA5E159923E50057C24B /* DMPaletteSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2116AA5D159923E50057C24B /* DMPaletteSectionView.m */; };
+		2116AA6015992D270057C24B /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2116AA5F15992D270057C24B /* Quartz.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2116AA33159921C00057C24B /* DMInspectorPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMInspectorPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2116AA37159921C00057C24B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2116AA3A159921C00057C24B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		2116AA3B159921C00057C24B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2116AA3C159921C00057C24B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2116AA3F159921C00057C24B /* DMInspectorPalette-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DMInspectorPalette-Info.plist"; sourceTree = "<group>"; };
+		2116AA41159921C00057C24B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2116AA43159921C00057C24B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2116AA45159921C00057C24B /* DMInspectorPalette-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DMInspectorPalette-Prefix.pch"; sourceTree = "<group>"; };
+		2116AA47159921C00057C24B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2116AA49159921C00057C24B /* DMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMAppDelegate.h; sourceTree = "<group>"; };
+		2116AA4A159921C00057C24B /* DMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMAppDelegate.m; sourceTree = "<group>"; };
+		2116AA4D159921C00057C24B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2116AA54159921F40057C24B /* DMPaletteContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMPaletteContainer.h; path = core/DMPaletteContainer.h; sourceTree = "<group>"; };
+		2116AA55159921F40057C24B /* DMPaletteContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMPaletteContainer.m; path = core/DMPaletteContainer.m; sourceTree = "<group>"; };
+		2116AA5C159923E50057C24B /* DMPaletteSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMPaletteSectionView.h; path = core/DMPaletteSectionView.h; sourceTree = "<group>"; };
+		2116AA5D159923E50057C24B /* DMPaletteSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMPaletteSectionView.m; path = core/DMPaletteSectionView.m; sourceTree = "<group>"; };
+		2116AA5F15992D270057C24B /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2116AA30159921C00057C24B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2116AA6015992D270057C24B /* Quartz.framework in Frameworks */,
+				2116AA38159921C00057C24B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2116AA28159921C00057C24B = {
+			isa = PBXGroup;
+			children = (
+				2116AA5F15992D270057C24B /* Quartz.framework */,
+				2116AA3D159921C00057C24B /* DMInspectorPalette */,
+				2116AA36159921C00057C24B /* Frameworks */,
+				2116AA34159921C00057C24B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2116AA34159921C00057C24B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2116AA33159921C00057C24B /* DMInspectorPalette.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2116AA36159921C00057C24B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2116AA37159921C00057C24B /* Cocoa.framework */,
+				2116AA39159921C00057C24B /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2116AA39159921C00057C24B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2116AA3A159921C00057C24B /* AppKit.framework */,
+				2116AA3B159921C00057C24B /* CoreData.framework */,
+				2116AA3C159921C00057C24B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		2116AA3D159921C00057C24B /* DMInspectorPalette */ = {
+			isa = PBXGroup;
+			children = (
+				2116AA57159921FB0057C24B /* DMInspectorPalette */,
+				2116AA49159921C00057C24B /* DMAppDelegate.h */,
+				2116AA4A159921C00057C24B /* DMAppDelegate.m */,
+				2116AA4C159921C00057C24B /* MainMenu.xib */,
+				2116AA3E159921C00057C24B /* Supporting Files */,
+			);
+			path = DMInspectorPalette;
+			sourceTree = "<group>";
+		};
+		2116AA3E159921C00057C24B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2116AA3F159921C00057C24B /* DMInspectorPalette-Info.plist */,
+				2116AA40159921C00057C24B /* InfoPlist.strings */,
+				2116AA43159921C00057C24B /* main.m */,
+				2116AA45159921C00057C24B /* DMInspectorPalette-Prefix.pch */,
+				2116AA46159921C00057C24B /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2116AA57159921FB0057C24B /* DMInspectorPalette */ = {
+			isa = PBXGroup;
+			children = (
+				2116AA54159921F40057C24B /* DMPaletteContainer.h */,
+				2116AA55159921F40057C24B /* DMPaletteContainer.m */,
+				2116AA5C159923E50057C24B /* DMPaletteSectionView.h */,
+				2116AA5D159923E50057C24B /* DMPaletteSectionView.m */,
+			);
+			name = DMInspectorPalette;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2116AA32159921C00057C24B /* DMInspectorPalette */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2116AA51159921C00057C24B /* Build configuration list for PBXNativeTarget "DMInspectorPalette" */;
+			buildPhases = (
+				2116AA2F159921C00057C24B /* Sources */,
+				2116AA30159921C00057C24B /* Frameworks */,
+				2116AA31159921C00057C24B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DMInspectorPalette;
+			productName = DMInspectorPalette;
+			productReference = 2116AA33159921C00057C24B /* DMInspectorPalette.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2116AA2A159921C00057C24B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DM;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Daniele Margutti";
+			};
+			buildConfigurationList = 2116AA2D159921C00057C24B /* Build configuration list for PBXProject "DMInspectorPalette" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2116AA28159921C00057C24B;
+			productRefGroup = 2116AA34159921C00057C24B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2116AA32159921C00057C24B /* DMInspectorPalette */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2116AA31159921C00057C24B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2116AA42159921C00057C24B /* InfoPlist.strings in Resources */,
+				2116AA48159921C00057C24B /* Credits.rtf in Resources */,
+				2116AA4E159921C00057C24B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2116AA2F159921C00057C24B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2116AA44159921C00057C24B /* main.m in Sources */,
+				2116AA4B159921C00057C24B /* DMAppDelegate.m in Sources */,
+				2116AA56159921F40057C24B /* DMPaletteContainer.m in Sources */,
+				2116AA5E159923E50057C24B /* DMPaletteSectionView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2116AA40159921C00057C24B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2116AA41159921C00057C24B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2116AA46159921C00057C24B /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2116AA47159921C00057C24B /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		2116AA4C159921C00057C24B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2116AA4D159921C00057C24B /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2116AA4F159921C00057C24B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2116AA50159921C00057C24B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2116AA52159921C00057C24B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DMInspectorPalette/DMInspectorPalette-Prefix.pch";
+				INFOPLIST_FILE = "DMInspectorPalette/DMInspectorPalette-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2116AA53159921C00057C24B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DMInspectorPalette/DMInspectorPalette-Prefix.pch";
+				INFOPLIST_FILE = "DMInspectorPalette/DMInspectorPalette-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2116AA2D159921C00057C24B /* Build configuration list for PBXProject "DMInspectorPalette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2116AA4F159921C00057C24B /* Debug */,
+				2116AA50159921C00057C24B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2116AA51159921C00057C24B /* Build configuration list for PBXNativeTarget "DMInspectorPalette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2116AA52159921C00057C24B /* Debug */,
+				2116AA53159921C00057C24B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2116AA2A159921C00057C24B /* Project object */;
+}
