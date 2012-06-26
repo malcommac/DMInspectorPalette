@@ -1,6 +1,6 @@
 # DMInspectorPalette
 
-DMScrollingTicker is an NSScrollView that supports dynamic loading of NSView grouped by section as like in XCode Inspector Window.
+DMInspectorPalette is an NSScrollView that supports dynamic loading of NSView grouped by section as like in XCode Inspector Window.
 You can collapse or expand an item in order to hide or show it's relative section.
 All state changes are animatable using Core Animation.
 
