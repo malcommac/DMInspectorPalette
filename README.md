@@ -6,6 +6,8 @@ All state changes are animatable using Core Animation.
 
 Daniele Margutti, <http://www.danielem.org>
 
+![DMInspectorPalette Example Project](http://danielemargutti.com/wp-content/uploads/2012/06/Untitled.png)
+
 ## How to get started
 
 * Create NSView subclass inside your nib file
