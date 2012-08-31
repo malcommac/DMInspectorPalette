@@ -88,6 +88,13 @@
     return frame;
 }
 
+-(void) layout {
+    [super layout];
+    // Fixes a small  bug in the DMInspectorPalette that was keeping the subviews/DMPaletteSectionViews from resizing when autolayout is used.
+    // Thanks to Owen Hildreth
+    [self layoutSubviews];
+}
+
 - (void)layoutSubviews {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
     contentSectionViews = [contentSectionViews sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
