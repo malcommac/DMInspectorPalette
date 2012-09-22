@@ -13,9 +13,9 @@
 		2116AA48159921C00057C24B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2116AA46159921C00057C24B /* Credits.rtf */; };
 		2116AA4B159921C00057C24B /* DMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2116AA4A159921C00057C24B /* DMAppDelegate.m */; };
 		2116AA4E159921C00057C24B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2116AA4C159921C00057C24B /* MainMenu.xib */; };
-		2116AA56159921F40057C24B /* DMPaletteContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2116AA55159921F40057C24B /* DMPaletteContainer.m */; };
-		2116AA5E159923E50057C24B /* DMPaletteSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2116AA5D159923E50057C24B /* DMPaletteSectionView.m */; };
 		2116AA6015992D270057C24B /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2116AA5F15992D270057C24B /* Quartz.framework */; };
+		21BBF89F160E21A100860D82 /* DMPaletteContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BBF89C160E21A100860D82 /* DMPaletteContainer.m */; };
+		21BBF8A0160E21A100860D82 /* DMPaletteSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BBF89E160E21A100860D82 /* DMPaletteSectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,11 +32,11 @@
 		2116AA49159921C00057C24B /* DMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMAppDelegate.h; sourceTree = "<group>"; };
 		2116AA4A159921C00057C24B /* DMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMAppDelegate.m; sourceTree = "<group>"; };
 		2116AA4D159921C00057C24B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		2116AA54159921F40057C24B /* DMPaletteContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMPaletteContainer.h; path = core/DMPaletteContainer.h; sourceTree = "<group>"; };
-		2116AA55159921F40057C24B /* DMPaletteContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMPaletteContainer.m; path = core/DMPaletteContainer.m; sourceTree = "<group>"; };
-		2116AA5C159923E50057C24B /* DMPaletteSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMPaletteSectionView.h; path = core/DMPaletteSectionView.h; sourceTree = "<group>"; };
-		2116AA5D159923E50057C24B /* DMPaletteSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMPaletteSectionView.m; path = core/DMPaletteSectionView.m; sourceTree = "<group>"; };
 		2116AA5F15992D270057C24B /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		21BBF89B160E21A100860D82 /* DMPaletteContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMPaletteContainer.h; path = ../../DMInspectorPalette/DMPaletteContainer.h; sourceTree = "<group>"; };
+		21BBF89C160E21A100860D82 /* DMPaletteContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMPaletteContainer.m; path = ../../DMInspectorPalette/DMPaletteContainer.m; sourceTree = "<group>"; };
+		21BBF89D160E21A100860D82 /* DMPaletteSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMPaletteSectionView.h; path = ../../DMInspectorPalette/DMPaletteSectionView.h; sourceTree = "<group>"; };
+		21BBF89E160E21A100860D82 /* DMPaletteSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMPaletteSectionView.m; path = ../../DMInspectorPalette/DMPaletteSectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +55,8 @@
 		2116AA28159921C00057C24B = {
 			isa = PBXGroup;
 			children = (
-				2116AA5F15992D270057C24B /* Quartz.framework */,
-				2116AA3D159921C00057C24B /* DMInspectorPalette */,
+				2116AA3D159921C00057C24B /* DMInspectorPalette Example */,
+				2116AA57159921FB0057C24B /* DMInspectorPalette */,
 				2116AA36159921C00057C24B /* Frameworks */,
 				2116AA34159921C00057C24B /* Products */,
 			);
@@ -73,6 +73,7 @@
 		2116AA36159921C00057C24B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2116AA5F15992D270057C24B /* Quartz.framework */,
 				2116AA37159921C00057C24B /* Cocoa.framework */,
 				2116AA39159921C00057C24B /* Other Frameworks */,
 			);
@@ -89,15 +90,15 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		2116AA3D159921C00057C24B /* DMInspectorPalette */ = {
+		2116AA3D159921C00057C24B /* DMInspectorPalette Example */ = {
 			isa = PBXGroup;
 			children = (
-				2116AA57159921FB0057C24B /* DMInspectorPalette */,
 				2116AA49159921C00057C24B /* DMAppDelegate.h */,
 				2116AA4A159921C00057C24B /* DMAppDelegate.m */,
 				2116AA4C159921C00057C24B /* MainMenu.xib */,
 				2116AA3E159921C00057C24B /* Supporting Files */,
 			);
+			name = "DMInspectorPalette Example";
 			path = DMInspectorPalette;
 			sourceTree = "<group>";
 		};
@@ -116,12 +117,12 @@
 		2116AA57159921FB0057C24B /* DMInspectorPalette */ = {
 			isa = PBXGroup;
 			children = (
-				2116AA54159921F40057C24B /* DMPaletteContainer.h */,
-				2116AA55159921F40057C24B /* DMPaletteContainer.m */,
-				2116AA5C159923E50057C24B /* DMPaletteSectionView.h */,
-				2116AA5D159923E50057C24B /* DMPaletteSectionView.m */,
+				21BBF89B160E21A100860D82 /* DMPaletteContainer.h */,
+				21BBF89C160E21A100860D82 /* DMPaletteContainer.m */,
+				21BBF89D160E21A100860D82 /* DMPaletteSectionView.h */,
+				21BBF89E160E21A100860D82 /* DMPaletteSectionView.m */,
 			);
-			name = DMInspectorPalette;
+			path = DMInspectorPalette;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,8 +192,8 @@
 			files = (
 				2116AA44159921C00057C24B /* main.m in Sources */,
 				2116AA4B159921C00057C24B /* DMAppDelegate.m in Sources */,
-				2116AA56159921F40057C24B /* DMPaletteContainer.m in Sources */,
-				2116AA5E159923E50057C24B /* DMPaletteSectionView.m in Sources */,
+				21BBF89F160E21A100860D82 /* DMPaletteContainer.m in Sources */,
+				21BBF8A0160E21A100860D82 /* DMPaletteSectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +319,7 @@
 				2116AA53159921C00057C24B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

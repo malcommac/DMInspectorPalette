@@ -4,7 +4,7 @@ DMInspectorPalette is an NSScrollView that supports dynamic loading of NSView gr
 You can collapse or expand an item in order to hide or show it's relative section.
 All state changes are animatable using Core Animation.
 
-Daniele Margutti, <http://www.danielem.org>
+Daniele Margutti, <http://www.danielemargutti.com>
 
 ![DMInspectorPalette Example Project](http://danielemargutti.com/wp-content/uploads/2012/06/Untitled.png)
 
@@ -15,12 +15,6 @@ Daniele Margutti, <http://www.danielem.org>
 * For each NSView (/section) create a DMPaletteSectionView object and assign it to the view with a title
 * Set your views to the palette container using DMPaletteContainer.sectionViews = yourArray
 * Done!
-
-## Change log
-
-### June 27, 2012
-
-* First version
 
 ## Donations
 
