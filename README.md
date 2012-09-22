@@ -20,8 +20,7 @@ Daniele Margutti, <http://www.danielemargutti.com>
 
 If you found this project useful, please donate.
 There’s no expected amount and I don’t require you to.
-
-<a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GS3DBQ69ZBKWJ">CLICK THIS LINK TO DONATE USING PAYPAL</a>
+[MAKE YOUR DONATION](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GS3DBQ69ZBKWJ)
 
 ## License (MIT)
 
