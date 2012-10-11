@@ -65,6 +65,11 @@
     [self layoutSubviewsAnimated:NO];
 }
 
+- (NSArray *)sectionViews
+{
+	return contentSectionViews;
+}
+
 #pragma mark - Geometry Managment (Internals)
 
 - (BOOL) isFlipped {
