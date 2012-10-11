@@ -139,4 +139,10 @@
     state = [container toggleStateFor:self];
 }
 
+- (void)setState:(DMPaletteState)_state
+{
+	state = _state;
+	disclosureTriangle.state = (state == DMPaletteStateExpanded ? NSOnState : NSOffState);
+}
+
 @end
