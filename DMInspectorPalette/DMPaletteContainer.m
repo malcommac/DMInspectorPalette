@@ -62,7 +62,7 @@
         paletteSection.index = idx;
         [contentView addSubview:paletteSection];
     }];
-    [self layoutSubviews];
+    [self layoutSubviewsAnimated:NO];
 }
 
 #pragma mark - Geometry Managment (Internals)
@@ -72,49 +72,90 @@
 }
 
 // Return the correct bound for our container based upon the size of each section(+ it's header)
-- (CGRect) boundsForContent {
-    __block CGFloat height = 0.0;
-    [contentSectionViews enumerateObjectsUsingBlock:^(DMPaletteSectionView *paletteSection, NSUInteger idx, BOOL *stop) {
-        height+=NSHeight(paletteSection.frame);
-    }];
-        
-    NSRect frame = NSMakeRect(0.0f,
-                              0.0f,
-                              NSWidth(self.frame),
-                              height);
-    NSClipView *clipView = [[self enclosingScrollView]contentView];
-    if (clipView != nil)
-        frame.size.width = [clipView documentRect].size.width;
-    return frame;
+- (CGRect) boundsForContent
+{
+	// take frame of bottom item and extend to origin
+	CGRect frame = [self frameForSectionAtIndex:[contentSectionViews count]-1];
+	frame.size.height += frame.origin.y;
+	frame.origin = NSZeroPoint;
+	return frame;
 }
 
 -(void) layout {
     [super layout];
     // Fixes a small  bug in the DMInspectorPalette that was keeping the subviews/DMPaletteSectionViews from resizing when autolayout is used.
     // Thanks to Owen Hildreth
-    [self layoutSubviews];
+    [self layoutSubviewsAnimated:NO];
 }
 
-- (void)layoutSubviews {
+- (NSRect)frameForSectionAtIndex:(NSUInteger)index
+{
+	__block NSRect frame = NSMakeRect(0.0f,
+												 0.0f,
+												 NSWidth(self.frame),
+												 0.0f);
+	
+	[contentSectionViews enumerateObjectsUsingBlock:^(DMPaletteSectionView *paletteSection, NSUInteger idx, BOOL *stop)
+	{
+		
+		BOOL followingSectionShiftedUp = NO;
+		
+		if (paletteSection.state == DMPaletteStateCollapsed)
+		{
+			frame.size.height = kDMPaletteSectionHeaderHeight;
+			followingSectionShiftedUp= YES;
+		}
+		else
+		{
+			frame.size.height = kDMPaletteSectionHeaderHeight + NSHeight(paletteSection.contentView.frame);;
+		}
+		
+		if (idx == index)
+		{
+			*stop = YES;
+		}
+		else
+		{
+			frame.origin.y = NSMaxY(frame);
+			
+			if (followingSectionShiftedUp)
+			{
+				frame.origin.y--;
+			}
+		}
+	}];
+	
+	return frame;
+}
+
+- (void)layoutSubviewsAnimated:(BOOL)animated
+{
+	if (animated)
+	{
+		[NSAnimationContext beginGrouping];
+    	[[NSAnimationContext currentContext] setDuration:kDMPaletteContainerAnimationDuration];
+	}
+	
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
     contentSectionViews = [contentSectionViews sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     NSRect contentRect = [self boundsForContent];
     [[self documentView] setFrame:contentRect];
         
-    __block BOOL collapsed = NO;
-    __block NSRect frame = NSMakeRect(0.0f,
-                                      0.0f,
-                                      NSWidth(self.frame),
-                                      0.0f);
     [contentSectionViews enumerateObjectsUsingBlock:^(DMPaletteSectionView* paletteSection, NSUInteger idx, BOOL *stop) {
-        if (collapsed)
-            frame.origin.y -= 1.0f;
-        frame.size.height = NSHeight(paletteSection.frame);
-        [paletteSection setFrame:frame];
-        
-        frame.origin.y += NSHeight(frame);
-        collapsed = (paletteSection.state == DMPaletteStateCollapsed);
+		 if (animated)
+		 {
+			 [[paletteSection animator] setFrame:[self frameForSectionAtIndex:idx]];
+		 }
+		 else
+		 {
+			 paletteSection.frame = [self frameForSectionAtIndex:idx];
+		 }
     }];
+	
+	if (animated)
+	{
+		[NSAnimationContext endGrouping];
+	}
 }
 
 #pragma mark - Manage sections
@@ -141,30 +182,17 @@
           animated:YES];
 }   
 
-- (void) setState:(DMPaletteState) state forSections:(NSIndexSet *) indexSet animated:(BOOL) animate {
-    __block CGFloat offsetY = 0.0f;
-    if (animate) {
-        [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:kDMPaletteContainerAnimationDuration];
-    }
-    [contentSectionViews enumerateObjectsUsingBlock:^(DMPaletteSectionView* sectionView, NSUInteger idx, BOOL *stop) {
-        NSRect sectionRect = NSMakeRect(NSMinX(self.bounds),
-                                        offsetY,
-                                        NSWidth(self.bounds),
-                                        NSHeight(sectionView.bounds));
-        if ([indexSet containsIndex:idx])
-            sectionRect.size.height = (state == DMPaletteStateCollapsed ?
-                                       kDMPaletteSectionHeaderHeight :
-                                       NSHeight(sectionView.contentView.frame)+kDMPaletteSectionHeaderHeight);
-        
-        offsetY += NSHeight(sectionRect);
-        if (animate)
-            [[sectionView animator] setFrame:sectionRect];
-        else [sectionView setFrame:sectionRect];
-    }];
-    
-    if (animate)
-        [NSAnimationContext endGrouping];
+- (void) setState:(DMPaletteState) state forSections:(NSIndexSet *) indexSet animated:(BOOL) animate
+{
+	// update model state first
+	[contentSectionViews enumerateObjectsUsingBlock:^(DMPaletteSectionView* sectionView, NSUInteger idx, BOOL *stop) {
+		if ([indexSet containsIndex:idx])
+		{
+			sectionView.state = state;
+		}
+	}];
+	
+	[self layoutSubviewsAnimated:animate];
 }
 
 

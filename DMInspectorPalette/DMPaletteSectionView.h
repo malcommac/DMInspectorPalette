@@ -20,7 +20,7 @@ enum  {
     
 }
 
-@property (readonly)            DMPaletteState      state;          // Current state of the section (see DMPaletteState)
+@property (nonatomic,assign)            DMPaletteState      state;          // Current state of the section (see DMPaletteState)
 @property (nonatomic,assign)    NSString*           title;          // Title of the header
 @property (nonatomic,assign)    NSUInteger          index;          // Current element index (assign it then use layoutSubviews to rearrange all the other items)
 @property (strong)              DMPaletteContainer* container;      // Related section's container

@@ -31,8 +31,8 @@
 
 #pragma mark - Other Utils
 
-// Relayout items (no animation is provided)
-- (void) layoutSubviews;
+// Relayout items
+- (void) layoutSubviewsAnimated:(BOOL)animated;
 
 @end
 
