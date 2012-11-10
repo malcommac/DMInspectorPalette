@@ -9,8 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 enum  {
-    DMPaletteStateCollapsed     = 0,    // Section is expanded
-    DMPaletteStateExpanded      = 1     // Section is collpased
+    DMPaletteStateCollapsed     = 0,    // Section is collpased
+    DMPaletteStateExpanded      = 1     // Section is expanded
 }; typedef NSUInteger DMPaletteState;
 
 #define kDMPaletteSectionHeaderHeight               20.0f       // Default header height

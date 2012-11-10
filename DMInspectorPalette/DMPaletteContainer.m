@@ -65,6 +65,11 @@
     [self layoutSubviewsAnimated:NO];
 }
 
+- (NSArray *)sectionViews
+{
+	return contentSectionViews;
+}
+
 #pragma mark - Geometry Managment (Internals)
 
 - (BOOL) isFlipped {
@@ -132,15 +137,21 @@
 {
 	if (animated)
 	{
+		// temporarily set the document view frame to the entire contianer, to avoid flicker at bottom section
+		[[self documentView] setFrame:self.bounds];
+		
 		[NSAnimationContext beginGrouping];
     	[[NSAnimationContext currentContext] setDuration:kDMPaletteContainerAnimationDuration];
+		[[NSAnimationContext currentContext] setCompletionHandler:^{
+			NSRect contentRect = [self boundsForContent];
+			[[self documentView] setFrame:contentRect];
+		}];
 	}
 	
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
     contentSectionViews = [contentSectionViews sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    NSRect contentRect = [self boundsForContent];
-    [[self documentView] setFrame:contentRect];
-        
+
+    
     [contentSectionViews enumerateObjectsUsingBlock:^(DMPaletteSectionView* paletteSection, NSUInteger idx, BOOL *stop) {
 		 if (animated)
 		 {
@@ -155,6 +166,11 @@
 	if (animated)
 	{
 		[NSAnimationContext endGrouping];
+	}
+	else
+	{
+		NSRect contentRect = [self boundsForContent];
+		[[self documentView] setFrame:contentRect];
 	}
 }
 
