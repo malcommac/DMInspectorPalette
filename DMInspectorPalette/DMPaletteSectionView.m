@@ -15,10 +15,6 @@
     NSButton *          disclosureTriangle;
     NSTextField *       nameField;
     
-    NSColor *           dashColor;
-    NSColor *           gradientStartColor;
-    NSColor *           gradientEndColor;
-    
     DMPaletteState      state;
 }
 - (void) setupDisclosureBar;
@@ -60,10 +56,6 @@
 }
 
 - (void) setupDisclosureBar {
-    dashColor = [NSColor colorWithCalibratedRed:0.502 green:0.502 blue:0.502 alpha:0.5];
-    gradientStartColor = [NSColor colorWithCalibratedRed:0.922 green:0.925 blue:0.976 alpha:1.0];
-    gradientEndColor = [NSColor colorWithCalibratedRed:0.741 green:0.749 blue:0.831 alpha:1.0];
-    
     disclosureTriangle = [[NSButton alloc] initWithFrame:NSMakeRect(5.0, 4.0, 13.0, 13.0)];
     [disclosureTriangle setBezelStyle:NSDisclosureBezelStyle];
     [disclosureTriangle setButtonType: NSPushOnPushOffButton];
@@ -101,10 +93,11 @@
     NSRectFillUsingOperation(dirtyRect, NSCompositeCopy);
     
     NSRect gradientFrame = NSMakeRect(0, 0, dirtyRect.size.width, kDMPaletteSectionHeaderHeight);
-    NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:gradientStartColor endingColor:gradientEndColor];
+    NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:container.sectionHeaderGradientStartColor
+                                                         endingColor:container.sectionHeaderGradientEndColor];
     [gradient drawInRect:gradientFrame angle:-90.0];
     
-    [dashColor set];
+    [container.sectionHeaderDashColor set];
     
     NSRect dashRect = [self bounds];
     dashRect.origin.x -= 1.0;
