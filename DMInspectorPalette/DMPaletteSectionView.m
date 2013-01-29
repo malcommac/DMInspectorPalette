@@ -120,12 +120,12 @@
 
 - (NSComparisonResult)compare:(DMPaletteSectionView *)otherView {
     if(otherView.index > index)
-        return NSGreaterThanComparison;
+        return NSOrderedAscending;
     
     if(otherView.index < index)
-        return NSLessThanComparison;
+        return NSOrderedDescending;
     
-    return NSEqualToComparison;
+    return NSOrderedSame;
 }
 
 -(void)disclosureClicked:(id)sender {
