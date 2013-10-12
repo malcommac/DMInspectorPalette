@@ -44,6 +44,7 @@
         self.wantsLayer = YES;
         self.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         contentView = [[DMFlippedClipView alloc] initWithFrame:self.bounds];
+        contentView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         [self setDocumentView:contentView];
         [self setHasVerticalScroller:YES];
         [self setHasHorizontalScroller:YES];
