@@ -114,10 +114,6 @@
     return YES;
 }
 
-- (void) viewWillMoveToSuperview:(NSView *)newSuperview {
-    
-}
-
 - (NSComparisonResult)compare:(DMPaletteSectionView *)otherView {
     if(otherView.index > index)
         return NSOrderedAscending;
