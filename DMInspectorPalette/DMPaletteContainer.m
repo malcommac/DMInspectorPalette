@@ -67,6 +67,7 @@
         paletteSection.index = idx;
         [contentView addSubview:paletteSection];
     }];
+    
     [self layoutSubviewsAnimated:NO];
 }
 
@@ -91,11 +92,22 @@
 	return frame;
 }
 
--(void) layout {
+- (void)_updateContentSizeIfNecessary
+{
+    CGRect boundsForContent = [self boundsForContent];
+    
+    if (!CGRectEqualToRect(boundsForContent, contentView.frame))
+    {
+        [contentView setFrame:boundsForContent];
+    }
+}
+
+- (void)layout
+{
+    // do not update frames of subviews here or else this messes up layout widths using auto layout
+    [self _updateContentSizeIfNecessary];
+    
     [super layout];
-    // Fixes a small  bug in the DMInspectorPalette that was keeping the subviews/DMPaletteSectionViews from resizing when autolayout is used.
-    // Thanks to Owen Hildreth
-    [self layoutSubviewsAnimated:NO];
 }
 
 - (NSRect)frameForSectionAtIndex:(NSUInteger)index
@@ -148,8 +160,8 @@
 		[NSAnimationContext beginGrouping];
     	[[NSAnimationContext currentContext] setDuration:kDMPaletteContainerAnimationDuration];
 		[[NSAnimationContext currentContext] setCompletionHandler:^{
-			NSRect contentRect = [self boundsForContent];
-			[[self documentView] setFrame:contentRect];
+            
+			[self _updateContentSizeIfNecessary];
 		}];
 	}
 	
@@ -174,8 +186,7 @@
 	}
 	else
 	{
-		NSRect contentRect = [self boundsForContent];
-		[[self documentView] setFrame:contentRect];
+		[self _updateContentSizeIfNecessary];
 	}
 }
 
