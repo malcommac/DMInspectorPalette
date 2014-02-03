@@ -28,11 +28,16 @@
 
 - (id)initWithContentView:(NSView *) sectContentView andTitle:(NSString *) headerTitle
 {
+    return [self initWithContentView:sectContentView andTitle:headerTitle initialState:DMPaletteStateExpanded];
+}
+
+- (id)initWithContentView:(NSView *) sectContentView andTitle:(NSString *) headerTitle initialState:(DMPaletteState)aState
+{
     self = [super initWithFrame:NSZeroRect];
     if (self) {
-        state = DMPaletteStateExpanded;
+        state = aState;
         [self setupDisclosureBar];
-        
+
         self.title = headerTitle;
         contentView = sectContentView;
         [super setFrame:NSMakeRect(NSMinX(self.frame),
@@ -47,7 +52,7 @@
         self.autoresizingMask = NSViewWidthSizable;
         contentView.autoresizingMask = NSViewWidthSizable;
     }
-    
+
     return self;
 }
 
