@@ -36,6 +36,7 @@
 
 @synthesize sectionViews;
 @synthesize useAnimations;
+@synthesize expandOneSectionAtATime;
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -48,7 +49,8 @@
         [self setDocumentView:contentView];
         [self setHasVerticalScroller:YES];
         [self setHasHorizontalScroller:YES];
-        
+
+        self.expandOneSectionAtATime = NO;
         self.sectionHeaderDashColor = [NSColor colorWithCalibratedRed:0.502 green:0.502 blue:0.502 alpha:0.5];
         self.sectionHeaderGradientStartColor = [NSColor colorWithCalibratedRed:0.922 green:0.925 blue:0.976 alpha:1.0];
         self.sectionHeaderGradientEndColor = [NSColor colorWithCalibratedRed:0.741 green:0.749 blue:0.831 alpha:1.0];
@@ -129,7 +131,7 @@
 		}
 		else
 		{
-			frame.size.height = kDMPaletteSectionHeaderHeight + NSHeight(paletteSection.contentView.frame);;
+			frame.size.height = kDMPaletteSectionHeaderHeight + NSHeight(paletteSection.contentView.frame);
 		}
 		
 		if (idx == index)
@@ -222,6 +224,12 @@
 		{
 			sectionView.state = state;
 		}
+        else
+        {
+            if (expandOneSectionAtATime) {
+                sectionView.state = DMPaletteStateCollapsed;
+            }
+        }
 	}];
 	
 	[self layoutSubviewsAnimated:animate];
