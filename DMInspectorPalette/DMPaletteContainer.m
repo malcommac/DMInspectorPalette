@@ -213,7 +213,7 @@
 - (void) setState:(DMPaletteState)state forSection:(DMPaletteSectionView *) targetSection animated:(BOOL)animate {
     [self setState:state
        forSections:[NSIndexSet indexSetWithIndex:[contentSectionViews indexOfObject:targetSection]]
-          animated:YES];
+          animated:animate];
 }   
 
 - (void) setState:(DMPaletteState) state forSections:(NSIndexSet *) indexSet animated:(BOOL) animate
